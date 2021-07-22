@@ -51,7 +51,7 @@ belongs_to :user
 has_many :shopping-address
 
 
-## shopping-address
+## shopping_addresses
 
 | Column        | Type   | Options     |
 | ------------- | ------ | ----------- |
