@@ -4,9 +4,11 @@
 | ------------------ | ------ | ------------------------- |
 | nickname           | string | null: false               |
 | encrypted_password | string | null: false               |
-| email               | string | null: false, unique: true |
-| full_name          | string | null: false               |
-| full_name_kana     | string | null: false               |
+| email              | string | null: false, unique: true |
+| lastname           | string | null: false               |
+| firstname          | string | null: false               |
+| lastname_kana      | string | null: false               |
+| firstname_kana     | string | null: false               |
 | birthday           | string | null: false               |
 
 ### Association
