@@ -22,7 +22,7 @@ has_many :purchases
 | ------------------- | ---------- | ------------------------------ |
 | product             | string     | null: false                    |
 | price               | integer    | null: false                    |
-| introduction        | string     | null: false                    |
+| description         | text       | null: false                    |
 | status_id           | integer    | null: false                    |
 | delivery_charge_id  | integer    | null: false                    |
 | shipping_address_id | integer    | null: false                    |
