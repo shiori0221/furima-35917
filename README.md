@@ -22,7 +22,6 @@ has_many :purchases
 | ---------------- | ---------- | ------------------------------ |
 | product          | string     | null: false                    |
 | price            | integer    | null: false                    |
-| image            | string     | null: false                    |
 | introduction     | string     | null: false                    |
 | status           | string     | null: false                    |
 | delivery_charge  | string     | null: false                    |
