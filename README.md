@@ -48,7 +48,7 @@ belongs_to :user
 
 belongs_to :item
 belongs_to :user
-has_many :shopping-address
+has_one :shopping-address
 
 
 ## shopping_addresses
