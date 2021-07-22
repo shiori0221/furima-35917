@@ -18,17 +18,17 @@ has_many :purchases
 
 ## itemsテーブル
 
-| Column           | Type       | Options                        |
-| ---------------- | ---------- | ------------------------------ |
-| product          | string     | null: false                    |
-| price            | integer    | null: false                    |
-| introduction     | string     | null: false                    |
-| status           | string     | null: false                    |
-| delivery_charge  | string     | null: false                    |
-| shipping_address | string     | null: false                    |
-| days_to_delivery | string     | null: false                    |
-| category         | string     | null: false                    |
-| user             | references | null: false, foreign_key: true |
+| Column               | ype       | Options                        |
+| ------------------- | ---------- | ------------------------------ |
+| product             | string     | null: false                    |
+| price               | integer    | null: false                    |
+| introduction        | string     | null: false                    |
+| status_id           | integer    | null: false                    |
+| delivery_charge_id  | integer    | null: false                    |
+| shipping_address_id | integer    | null: false                    |
+| days_to_delivery_id | integer    | null: false                    |
+| category_id         | integer    | null: false                    |
+| user                | references | null: false, foreign_key: true |
 
 ### Association
 
