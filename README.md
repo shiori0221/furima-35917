@@ -21,7 +21,7 @@ has_many :purchases
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
 | product          | string     | null: false                    |
-| price            | string     | null: false                    |
+| price            | integer    | null: false                    |
 | image            | string     | null: false                    |
 | introduction     | string     | null: false                    |
 | status           | string     | null: false                    |
