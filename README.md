@@ -32,7 +32,7 @@ has_many :purchases
 
 ### Association
 
-has_one :purchases
+has_one :purchase
 belongs_to :user
 
 
