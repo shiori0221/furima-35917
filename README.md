@@ -53,14 +53,14 @@ has_many :shopping-address
 
 ## shopping_addresses
 
-| Column        | Type   | Options     |
-| ------------- | ------ | ----------- |
-| postal_code   | string | null: false |
-| prefecture    | string | null: false |
-| municipality  | string | null: false |
-| address       | string | null: false |
-| building_name | string | null: false |
-| phone_number  | string | null: false |
+| Column              | Type    | Options     |
+| ------------------- | ------- | ----------- |
+| postal_code         | string  | null: false |
+| shipping_address_id | integer | null: false |
+| municipality        | string  | null: false |
+| address             | string  | null: false |
+| building_name       | string  | null: false |
+| phone_number        | string  | null: false |
 
 ### Association
 
