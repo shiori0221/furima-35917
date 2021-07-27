@@ -6,6 +6,8 @@ class Item < ApplicationRecord
   belongs_to :shipping_address
   belongs_to :days_to_delivery
 
+  has_one_attached :image
+
   with_options presence: true do
     validates :product
     validates :price, format: {with: /^[0-9]+$/}, inclusion: { in: (300...9999999)}
