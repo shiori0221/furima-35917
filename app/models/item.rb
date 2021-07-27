@@ -10,8 +10,9 @@ class Item < ApplicationRecord
 
   with_options presence: true do
     validates :product
-    validates :price, format: {with: /^[0-9]+$/}, inclusion: { in: (300...9999999)}
+    validates :price, inclusion: {in: 300..9_999_999}, format: { with: /\A[0-9]+\z/ }, numericality: true
     validates :description
+    validates :image
   end
   with_options numericality: { other_than: 1, message: "can't be blank"} do
     validates :status_id

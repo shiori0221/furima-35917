@@ -6,7 +6,7 @@ class Category < ActiveHash::Base
     { id: 4, name: 'ベビー・キッズ' },
     { id: 5, name: 'インテリア・住まい・小物' },
     { id: 6, name: '本・音楽・ゲーム' },
-    { id: 7, name: 'おもちゃ・ホビー・グッズ' }
+    { id: 7, name: 'おもちゃ・ホビー・グッズ' },
     { id: 8, name: '家電・スマホ・カメラ' },
     { id: 9, name: 'スポーツ・レジャー' },
     { id: 10, name: 'ハンドメイド' },
