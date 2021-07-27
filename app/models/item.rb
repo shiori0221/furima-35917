@@ -8,7 +8,7 @@ class Item < ApplicationRecord
 
   with_options presence: true do
     validates :product
-    validates :price
+    validates :price, format: {with: /^[0-9]+$/}, inclusion: { in: (300...9999999)}
     validates :description
   end
   with_options numericality: { other_than: 1, message: "can't be blank"} do
