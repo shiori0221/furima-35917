@@ -7,7 +7,7 @@ class PurchaseShoppingAddress
     validates :shipping_address_id, numericality: {other_than: 0, message: "can't be blank"}
     validates :municipality
     validates :address
-    validates :phone_number, format: {with: /\A[0-9]+\z/ }, length: { maximum: 11 },numericality: true
+    validates :phone_number, format: {with: /\A[0-9]+\z/ }, length: { minimum: 10, maximum: 11 },numericality: true
     validates :user_id
     validates :item_id
     validates :token
