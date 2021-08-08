@@ -33,7 +33,7 @@ RSpec.describe PurchaseShoppingAddress, type: :model do
       it 'postal_codeが半角のハイフンを含んだ正しい形式でないと保存できないこと' do
         @purchase_shopping_address.postal_code = '1111111'
         @purchase_shopping_address.valid?
-        expect(@purchase_shopping_address.errors.full_messages).to include("Postal code is invalid. Include hyphen(-)")
+        expect(@purchase_shopping_address.errors.full_messages).to include('Postal code is invalid. Include hyphen(-)')
       end
       it 'shipping_address_idが空だと保存できないこと' do
         @purchase_shopping_address.shipping_address_id = ''
@@ -63,12 +63,12 @@ RSpec.describe PurchaseShoppingAddress, type: :model do
       it 'phone_numberが9文字以下では保存できないこと' do
         @purchase_shopping_address.phone_number = '111111111'
         @purchase_shopping_address.valid?
-        expect(@purchase_shopping_address.errors.full_messages).to include("Phone number is too short (minimum is 10 characters)")
+        expect(@purchase_shopping_address.errors.full_messages).to include('Phone number is too short (minimum is 10 characters)')
       end
       it 'phone_numberが12文字以上では保存できないこと' do
         @purchase_shopping_address.phone_number = '111111111111'
         @purchase_shopping_address.valid?
-        expect(@purchase_shopping_address.errors.full_messages).to include("Phone number is too long (maximum is 11 characters)")
+        expect(@purchase_shopping_address.errors.full_messages).to include('Phone number is too long (maximum is 11 characters)')
       end
       it 'userが紐付いていないと保存できないこと' do
         @purchase_shopping_address.user_id = nil
