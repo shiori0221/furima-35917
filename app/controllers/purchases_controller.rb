@@ -4,7 +4,6 @@ class PurchasesController < ApplicationController
   before_action :move_to_index, only: [:index, :create]
 
   def index
-    @item = Item.find(params[:item_id])
     @purchase_shopping_address = PurchaseShoppingAddress.new
   end
 
