@@ -41,7 +41,7 @@ RSpec.describe PurchaseShoppingAddress, type: :model do
         expect(@purchase_shopping_address.errors.full_messages).to include("Shipping address can't be blank")
       end
       it 'shipping_address_idが1だと保存できないこと' do
-        @purchase_shopping_address.shipping_address_id = '1'
+        @purchase_shopping_address.shipping_address_id = 1
         @purchase_shopping_address.valid?
         expect(@purchase_shopping_address.errors.full_messages).to include("Shipping address can't be blank")
       end
@@ -69,6 +69,11 @@ RSpec.describe PurchaseShoppingAddress, type: :model do
         @purchase_shopping_address.phone_number = '111111111111'
         @purchase_shopping_address.valid?
         expect(@purchase_shopping_address.errors.full_messages).to include('Phone number is too long (maximum is 11 characters)')
+      end
+      it 'phone_numberは英数混合では登録できないこと' do
+        @purchase_shopping_address.phone_number = 'aaa1111111'
+        @purchase_shopping_address.valid?
+        expect(@purchase_shopping_address.errors.full_messages).to include("Phone number is invalid")
       end
       it 'userが紐付いていないと保存できないこと' do
         @purchase_shopping_address.user_id = nil
