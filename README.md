@@ -10,11 +10,13 @@
 | lastname_kana      | string | null: false               |
 | firstname_kana     | string | null: false               |
 | birthday           | date   | null: false               |
+| profile            | text   |                           |
 
 ### Association
 
 has_many :items
 has_many :purchases
+has_many :comments
 
 ## itemsテーブル
 
@@ -34,6 +36,7 @@ has_many :purchases
 
 has_one :purchase
 belongs_to :user
+has_many :comments
 
 
 ## purchasesテーブル
@@ -66,3 +69,17 @@ has_one :shopping_address
 ### Association
 
 belongs_to :purchase
+
+
+## comments
+
+| Column | Type       | Options                        |
+| ------ |  --------- | ------------------------------ |
+| text   | text       | null: false                    |
+| user   | references | null: false, foreign_key: true |
+| item   | references | null: false, foreign_key: true |
+
+### Association
+
+belongs_to :user
+belongs_to :item
