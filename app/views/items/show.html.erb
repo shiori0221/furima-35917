@@ -39,7 +39,7 @@
       <tbody>
         <tr>
           <th class="detail-item">出品者</th>
-          <td class="detail-value"><%= @item.user.nickname %></td>
+          <td class="detail-value"><%= link_to @item.user.nickname, "/users/#{@item.user_id}" %></td>
         </tr>
         <tr>
           <th class="detail-item">カテゴリー</th>
@@ -92,7 +92,7 @@
     <h3 class="comments-header">＜コメント一覧＞</h3>
     <% @comments.each do |comment| %>
       <p>
-        <strong><%= comment.user.nickname %>:</strong>
+        <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>:</strong>
         <%= comment.text %>
       </p>
     <% end %>
