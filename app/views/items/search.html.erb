@@ -1,0 +1,14 @@
+<%= render "shared/header" %>
+<h1>＜"<%= @keyword %>"の検索結果＞</h1>
+<div class='item-contents'>
+<% if @items.present? %>
+  <ul class='item-lists'>
+    <% @items.each do |item| %>
+      <%= render partial: "item", locals: { item: item } %>
+    <% end %>
+  </ul>
+<% else %>
+  該当商品がありません
+<% end %>
+</div>
+<%= render "shared/footer" %>

@@ -89,12 +89,14 @@
       <% end %>
     <% end %>
     <div class="comments">
-    <h3 class="comments-header">＜コメント一覧＞</h3>
-    <% @comments.each do |comment| %>
-      <p>
-        <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>:</strong>
-        <%= comment.text %>
-      </p>
+    <% if @comments.present? %>
+      <h3 class="comments-header">＜コメント一覧＞</h3>
+      <% @comments.each do |comment| %>
+        <p>
+          <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>:</strong>
+          <%= comment.text %>
+        </p>
+      <% end %>
     <% end %>
     </div>
   </div>

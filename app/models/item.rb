@@ -24,4 +24,12 @@ class Item < ApplicationRecord
     validates :days_to_delivery_id
     validates :category_id
   end
+
+  def self.search(search)
+    if search != ''
+      Item.where('product or description LIKE(?)', "%#{search}%")
+    else
+      Item.all
+    end
+  end
 end
