@@ -69,6 +69,12 @@
                   "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
     </div>
   </div>
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">プロフィール</label>
+    </div>
+    <%= f.text_area :profile, class:"input-profile", id:"profile", placeholder:"例) よろしくお願いします", maxlength:"200" %>
+  </div>
   <div class='register-btn'>
     <%= f.submit "変更する" ,class:"register-red-btn" %>
   </div>

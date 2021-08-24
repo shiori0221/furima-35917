@@ -19,6 +19,7 @@ class User < ApplicationRecord
       validates :firstname_kana
     end
   end
+  validates :profile, length: { maximum: 200 }
 
   has_many :items
   has_many :purchases

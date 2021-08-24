@@ -3,12 +3,16 @@
 <div class="contents row">
   <% if user_signed_in? && @user == current_user %>
     <h1>＜<%= @user.nickname %>さんのマイページ＞</h1>
-    <div class="linkarea">
+    <div class="link-area">
       <%= link_to "プロフィール編集", edit_user_registration_path(current_user) %>
     </div>
   <% else %>
     <h1>＜<%= @user.nickname %>さんのユーザーページ＞</h1>
   <% end %>
+  <div class="profile">
+    <div class="subtitle" >プロフィール</div>
+    <h2><%= @user.profile %></h2>
+  </div>
   <div class='item-contents'>
     <div class="subtitle" >
       商品一覧
@@ -27,9 +31,9 @@
           <% end %>
         </div>
         <div class='item-info'>
-          <h2 class='item-name'>
+          <h3 class='item-name'>
             <%= item.product %>
-          </h2>
+          </h3>
           <div class='item-price'>
             <span><%= item.price %>円<br><%= item.delivery_charge.name %></span>
             <div class='star-btn'>
