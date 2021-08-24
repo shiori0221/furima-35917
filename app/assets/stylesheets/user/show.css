@@ -4,10 +4,29 @@ h1 {
   font-weight: bold;
 }
 
-.linkarea {
+.link-area {
   text-align: right;
-  display: block;
   margin-right: 20px;
+}
+
+.profile {
+  background-color: #FFF;
+  align-items: center;
+  padding: 5vh 0;
+}
+
+.profile>.subtitle {
+  font-size: 3vh;
+  color: #3ccace;
+  margin: 1vh 0;
+  text-decoration: none;
+  text-align: center;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 18px;
+  text-align: center;
 }
 
 .item-contents {
@@ -15,7 +34,7 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10vh 0;
+  padding: 5vh 0;
 }
 
 .item-contents>.title {
