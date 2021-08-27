@@ -27,7 +27,7 @@ class Item < ApplicationRecord
 
   def self.search(search)
     if search != ''
-      Item.where('product or description LIKE(?)', "%#{search}%")
+      Item.where('product LIKE(?) OR description LIKE(?)', "%#{search}%", "%#{search}%")
     else
       Item.all
     end
