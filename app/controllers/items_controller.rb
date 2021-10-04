@@ -49,8 +49,16 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:product, :price, :description, :status_id, :delivery_charge_id, :shipping_address_id,
-                                 :days_to_delivery_id, :category_id, images: []).merge(user_id: current_user.id)
+    permit_params = params.require(:item).permit(:product, :price, :description, :status_id, :delivery_charge_id, :shipping_address_id,
+                                 :days_to_delivery_id, :category_id, images: [], images_attachments_attributes: [:id, :_destroy]).merge(user_id: current_user.id)
+    images_attachments_attributes = permit_params.delete(:images_attachments_attributes)
+    if images_attachments_attributes
+      destroy_signed_ids = images_attachments_attributes.to_h.map do |_, attribute|
+        @item.images.find_by(id: attribute[:id])&.signed_id if attribute.delete(:_destroy)
+      end.compact
+      permit_params[:images] -= destroy_signed_ids
+    end
+    permit_params
   end
 
   def set_item

@@ -7,9 +7,10 @@ class Item < ApplicationRecord
   belongs_to :days_to_delivery
 
   has_many_attached :images
+  accepts_nested_attributes_for :images_attachments, allow_destroy: true
   belongs_to :user
   has_one :purchase
-  has_many :comments
+  has_many :comments, dependent: :destroy
 
   with_options presence: true do
     validates :product, length: { maximum: 40 }
