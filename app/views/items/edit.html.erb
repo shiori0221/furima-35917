@@ -21,8 +21,27 @@ app/assets/stylesheets/items/new.css %>
         <p>
           クリックしてファイルをアップロード
         </p>
-        <%= f.file_field :image, id:"item-image" %>
-        <div id="image-list"></div>
+        <div id="image-list", class="edit">
+          <% if @item.images.present? %>
+              <b>＜現在登録されている画像(削除するものにチェックを入れてください)＞</b>
+              <% @item.images.each do |image| %>
+                <%= f.hidden_field :images, multiple: true, value: image.signed_id %>
+              <% end %>
+              <div class="images">
+                <%= f.fields_for :images_attachments do |image| %>
+                  <div class="present-item">
+                    <%= image.check_box :_destroy, {checked: false}, true, false %>
+                    <%= image_tag url_for(image.object), class: 'image-preview' %>
+                  </div>
+                <% end %>
+              </div>
+            <% end %>
+          <br>
+          <b>＜新しく追加したい画像を選択してください＞</b>
+          <div class="image-element" id="img-set">
+            <%= f.file_field :images, name: 'item[images][]', id:"item-image" %>
+          </div>
+        </div>
       </div>
     </div>
     <%# /商品画像 %>

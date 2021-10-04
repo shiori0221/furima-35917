@@ -13,6 +13,8 @@ module Furima35917
 
     config.i18n.default_locale = :ja
 
+    ActiveSupport::Deprecation.silenced = true if Rails.version == '6.0.4'
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading

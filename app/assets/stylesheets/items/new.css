@@ -81,7 +81,7 @@
 }
 
 .click-upload {
-  margin: 15px 0;
+  margin: 15px auto;
   min-width: 250px;
 }
 
@@ -89,8 +89,14 @@
   margin-bottom: 15px;
 }
 
+.images {
+  display: flex;
+  flex-wrap: wrap
+}
+
 .image-preview {
-  width: 200px;
+  width: 13vw;
+  height: 26vh;
 }
 /* /商品画像 */
 

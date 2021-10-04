@@ -53,10 +53,10 @@ RSpec.describe Item, type: :model do
           @item.valid?
           expect(@item.errors[:category_id]).to include(I18n.t('errors.messages.not_a_number'))
         end
-        it 'imageが空では出品できない' do
-          @item.image = nil
+        it 'imagesが空では出品できない' do
+          @item.images = nil
           @item.valid?
-          expect(@item.errors[:image]).to include(I18n.t('errors.messages.blank'))
+          expect(@item.errors[:images]).to include(I18n.t('errors.messages.blank'))
         end
         it 'status_idの選択が１だと登録できない' do
           @item.status_id = '1'

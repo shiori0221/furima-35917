@@ -9,7 +9,7 @@ ja:
         lastname_kana: 苗字カナ
         firstname_kana: 名前カナ
       item:
-        image: 画像
+        images: 画像
         product: 商品名
         price: 販売価格
         description: 商品の説明
