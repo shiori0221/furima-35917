@@ -7,13 +7,31 @@
       <%= @item.product %>
     </h2>
     <div class="item-img-content">
-      <% @item.images.each do |image| %>
-        <%= image_tag image ,class:"item-box-img" %>
-        <% if @item.purchase %>
-          <div class="sold-out">
-          <span>Sold Out!!</span>
-          </div>
+      <% if @item.images.length < 2 %>
+        <% @item.images.each do |image| %>
+          <%= image_tag image ,class:"item-box-img" %>
+          <% if @item.purchase %>
+            <div class="sold-out">
+              <span>Sold Out!!</span>
+            </div>
+          <% end %>
         <% end %>
+      <% else %>
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <% @item.images.each do |image| %>
+              <%= image_tag image ,class:"swiper-slide" %>
+              <% if @item.purchase %>
+                <div class="sold-out">
+                  <span>Sold Out!!</span>
+                  </div>
+              <% end %>
+            <% end %>
+          </div>
+          <div class="swiper-pagination "></div>
+          <div class="swiper-button-prev swiper-button-white"></div>
+	        <div class="swiper-button-next swiper-button-white"></div>
+        </div>
       <% end %>
     </div>
     <div class="item-price-box">

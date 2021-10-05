@@ -31,8 +31,8 @@
 
 .buy-item-img {
   margin-right: 20px;
-  height: 130px;
-  width: 250px;
+  height: 150px;
+  width: 150px;
   object-fit: contain;
 }
 
@@ -50,6 +50,7 @@
   font-weight: bold;
   align-items: center;
   margin-top: 10px;
+  width: 150px;
 }
 
 .item-price-text {
