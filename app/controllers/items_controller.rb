@@ -50,7 +50,7 @@ class ItemsController < ApplicationController
 
   def item_params
     permit_params = params.require(:item).permit(:product, :price, :description, :status_id, :delivery_charge_id, :shipping_address_id,
-                                 :days_to_delivery_id, :category_id, images: [], images_attachments_attributes: [:id, :_destroy]).merge(user_id: current_user.id)
+                                                 :days_to_delivery_id, :category_id, images: [], images_attachments_attributes: [:id, :_destroy]).merge(user_id: current_user.id)
     images_attachments_attributes = permit_params.delete(:images_attachments_attributes)
     if images_attachments_attributes
       destroy_signed_ids = images_attachments_attributes.to_h.map do |_, attribute|
